@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect to App Store</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function redirectToAppStore() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // Check if the user agent contains 'Android' for Android devices
+            if (/android/i.test(userAgent)) {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.mydigirecords'; // Replace 'YOUR_PACKAGE_NAME' with your Android app's package name
+            }
+            // Check if the user agent contains 'iPhone' or 'iPad' for iOS devices
+            else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+                window.location.href = 'https://apps.apple.com/in/app/mydigirecords/id6444704288'; // Replace 'YOUR_APP_NAME' and 'YOUR_APP_ID' with your iOS app's name and ID
+            }
+            // Redirect to a web page if the device is not Android or iOS
+            else {
+                window.location.href = 'https://mydigirecords.com/in/'; // Replace with your desired fallback URL
+            }
+        }
+
+        // Call the function when the page loads
+        redirectToAppStore();
+    </script>
+</body>
+</html>
